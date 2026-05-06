@@ -5,7 +5,7 @@ struct SettingsSheet: View {
     @EnvironmentObject private var appState: AppState
 
     @AppStorage("whisperModel") private var whisperModel = ""
-    @AppStorage("meetingLanguage") private var meetingLanguage = ""
+    @AppStorage("meetingLanguage") private var meetingLanguage = "ru"
     @AppStorage("domainTerms") private var domainTerms = ""
     @AppStorage("autoTranscribe") private var autoTranscribe = true
     @AppStorage("autoSave") private var autoSave = true
@@ -69,6 +69,7 @@ struct SettingsSheet: View {
                                 Text("Auto-detect").tag("")
                                 Text("Danish").tag("da")
                                 Text("English").tag("en")
+                                Text("Russian").tag("ru")
                             }
                             .pickerStyle(.segmented)
                             .labelsHidden()
@@ -221,7 +222,7 @@ struct SettingsSheet: View {
             if recordingsPath.isEmpty { recordingsPath = Preferences.shared.recordingsPath }
             // peoplePagesPath is intentionally left empty by default (feature off)
             // Migrate stale free-text values ("Danish or English", etc.) to valid picker tags
-            if !["", "da", "en"].contains(meetingLanguage) {
+            if !["", "da", "en", "ru"].contains(meetingLanguage) {
                 meetingLanguage = ""
                 Preferences.shared.meetingLanguage = ""
             }

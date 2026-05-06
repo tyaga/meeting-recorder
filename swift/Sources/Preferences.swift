@@ -14,7 +14,7 @@ class Preferences {
     }
 
     var meetingLanguage: String {
-        get { defaults.string(forKey: "meetingLanguage") ?? "" }
+        get { defaults.string(forKey: "meetingLanguage") ?? "ru" }
         set { defaults.set(newValue, forKey: "meetingLanguage") }
     }
 

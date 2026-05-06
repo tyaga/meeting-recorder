@@ -852,6 +852,7 @@ struct RecordingDetailView: View {
                 Text("Auto").tag("")
                 Text("DA").tag("da")
                 Text("EN").tag("en")
+                Text("RU").tag("ru")
             }
             .pickerStyle(.segmented)
             .labelsHidden()
